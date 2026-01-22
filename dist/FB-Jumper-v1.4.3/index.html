@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>FB Jumper</title>
+    <link rel="stylesheet" href="css/panel.css">
+</head>
+<body>
+    <main class="panel">
+        <div class="version">v1.4.3</div>
+        <section class="input-block">
+            <label for="fb">
+                Feedback Lines
+            </label>
+            <textarea id="fb" spellcheck="false" autocomplete="off" oncontextmenu="return true;"></textarea>
+        </section>
+        <section class="controls">
+            <button id="parse">解析</button>
+            <button id="clear">クリア</button>
+        </section>
+        <section class="adjust">
+            <div class="adjust-header">
+                <div>
+                    <div class="adjust-title">タイムスタンプ補正（追尾）</div>
+                </div>
+            </div>
+            <div class="adjust-auto">
+                <label class="adjust-auto-label" for="auto-follow">
+                    <input id="auto-follow" type="checkbox" />
+                    <span>カット検知で自動補正</span>
+                </label>
+                <div id="auto-follow-status" class="adjust-auto-status">停止中</div>
+            </div>
+        </section>
+        <section class="results">
+            <div class="results-header">
+                <div class="results-title">解析結果</div>
+            </div>
+            <div class="results-inline-actions">
+                <button id="add-entry" class="ghost-button add-entry-button" title="再生ヘッドから追加">+</button>
+                <div class="results-inline-right">
+                    <button id="copy-list" class="ghost-button">コピー</button>
+                    <button id="clear-checks-inline" class="ghost-button">チェック全クリア</button>
+                </div>
+            </div>
+            <div id="diagnostic-status" class="diagnostic-status hidden"></div>
+            <div id="list" class="results-list"></div>
+        </section>
+    </main>
+    <script src="lib/CSInterface.js"></script>
+    <script src="js/panel.js"></script>
+</body>
+</html>
